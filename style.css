@@ -5,7 +5,7 @@
 body{
     height:100vh;
     width:100vw;
-    background-color: antiquewhite;
+    background-color:rgba(242, 226, 204,0.2);
 }
 .attribution a {
     color: hsl(228, 45%, 44%);
@@ -41,44 +41,49 @@ body{
   }
 .desert{
     width:100%;
-    height: 25%;
     border-radius:5px;
+}
 
-}
-.desert button{
-    width: 50%;
-    text-align: center;
-    border:solid 1px orangered;
-    border-radius: 20px;
-    background-color: white;
-}
-button:hover{
-    background-color: orangered;
-}
 .image{
     width:100%;
     height:200px;
     position: relative;
-   
+    
 }
 .image img{
     width: 100%;
     height: 100%;
     border-radius: 5px;
 }
-.image button{
-
-    width: 50%;
-    height:35px;
+.imageshow{
+    border:solid 2px rgb(199, 59, 15);
+    transition: border 0.1s ease;
+}
+.orderButton{
+    width:150px;
+    height:40px;
     text-align: center;
     border:solid 1px orangered;
     border-radius: 20px;
+    background-color: white;
     position: absolute;
-    top:190px;
-    right:50px;
+    bottom:-20px;
+    left:20%;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+    }
+.orderButton img{
+    width: 20px;
+    height: 20px;
+
 }
 
+.orderItem{
+    background-color:orangered ;
+    
+}
 
 /* cart section */
 .cart{

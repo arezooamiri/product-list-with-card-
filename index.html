@@ -15,41 +15,42 @@
         
             <div class="desert">
                 <div class="image">
-                    <img src="../images/image-waffle-desktop.jpg">
-                    <button><img src="/images/icon-add-to-cart.svg"/>Add to Cart</button>
+                    <img  class="imageCard" id="image1" src="../images/image-waffle-desktop.jpg">
+                    <button class="orderButton" data-target="image1">
+                        <img src="/images/icon-add-to-cart.svg"/>Add to Cart
+                        <div id="clac"></div>
+                    </button>
                 </div>
-                
                 <span>Waffle</span>
                 <p>Waffle with Berries</p>
                 <p>6.50</p>
-                
-                
             </div>
             <div class="desert">
                 <div class="image">
-                    <img src="../images/image-creme-brulee-desktop.jpg">
-                    <button><img src="/images/icon-add-to-cart.svg"/>Add to Cart</button>
+                    <img   id="image2"class="imageCard" src="../images/image-creme-brulee-desktop.jpg">
+                    <button class="orderButton" data-target="image2" ><img src="/images/icon-add-to-cart.svg"/>Add to Cart</button>
                 </div>
-                <span>Crème Brûlée</span>
-                <p>Vanilla Bean Crème Brûlée</p>
-                <p>7.00</p>
+                <div>
+                    <span>Crème Brûlée</span>
+                    <p>Vanilla Bean Crème Brûlée</p>
+                    <p>7.00</p></div>
                 </div>
             <div class="desert">
                 <div class="image">
-                    <img src="../images/image-macaron-desktop.jpg">
-                    <button><img src="/images/icon-add-to-cart.svg"/> Add to Cart</button>
+                    <img  id="image3" src="../images/image-macaron-desktop.jpg">
+                    <button class="orderButton" data-target="image3">
+                        <img class="basket" src="/images/icon-add-to-cart.svg"/> Add to Cart
+                    </button>
                 </div>
-                
                 <span> Macaron</span>
                 <p>Macaron Mix of Five</p>
                 <p>8.00</p>
             </div>
             <div class="desert">
                 <div class="image">
-                    <img src="images/image-tiramisu-desktop.jpg">
-                    <button><img src="/images/icon-add-to-cart.svg"/> Add to Cart</button>
+                    <img  id="image4" src="images/image-tiramisu-desktop.jpg">
+                    <button class="orderButton" data-target="image4"><img src="/images/icon-add-to-cart.svg"/> Add to Cart</button>
                 </div>
-                
                 <span> Tiramisu</span>
                 <p>Classic Tiramisu</p>
                 <p>5.50</p>
@@ -58,8 +59,8 @@
             
             <div class="desert">
                 <div class="image">
-                    <img src="images/image-baklava-desktop.jpg">
-                    <button><img src="/images/icon-add-to-cart.svg"/> Add to Cart</button>
+                    <img id="image5" src="images/image-baklava-desktop.jpg">
+                    <button class="orderButton" data-target="image5"><img src="/images/icon-add-to-cart.svg"/> Add to Cart</button>
                 </div>
                 
                 <span> Baklava</span>
@@ -68,8 +69,8 @@
             </div>
             <div class="desert"> 
                 <div class="image">
-                    <img src="images/image-meringue-desktop.jpg">
-                    <button><img src="/images/icon-add-to-cart.svg"/> Add to Cart</button>
+                    <img id="image6" src="images/image-meringue-desktop.jpg">
+                    <button class="orderButton" data-target="image6"><img src="/images/icon-add-to-cart.svg"/> Add to Cart</button>
                 </div>
                 
                 <span>Pie </span>
@@ -78,8 +79,8 @@
             </div>
             <div class="desert"> 
                 <div class="image">
-                    <img src="images/image-cake-desktop.jpg">
-                    <button><img src="/images/icon-add-to-cart.svg"/> Add to Cart</button>
+                    <img id="image7" src="images/image-cake-desktop.jpg">
+                    <button class="orderButton" data-target="image7"><img src="/images/icon-add-to-cart.svg"/> Add to Cart</button>
                 </div>
                 
                 <span>  Cake</span>
@@ -88,8 +89,8 @@
             </div>
             <div class="desert">
                 <div class="image">
-                    <img src="images/image-brownie-desktop.jpg">
-                    <button> <img src="/images/icon-add-to-cart.svg"/>Add to Cart</button>
+                    <img id="image8" src="images/image-brownie-desktop.jpg">
+                    <button class="orderButton" data-target="image8"> <img src="/images/icon-add-to-cart.svg"/>Add to Cart</button>
                 </div>
                
                 <span> Brownie</span>
@@ -98,8 +99,8 @@
             </div>
             <div class="desert">
                 <div class="image">
-                    <img src="images/image-panna-cotta-desktop.jpg">
-                    <button> 
+                    <img id="image9" src="images/image-panna-cotta-desktop.jpg">
+                    <button class="orderButton" data-target="image9"> 
                         <img src="/images/icon-add-to-cart.svg"/>
                         Add to Cart
                     </button>
@@ -121,5 +122,6 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
     Coded by <a href="#">Arezoo</a>
   </div>
+  <script src="main.js"> </script>
 </body>
 </html>
