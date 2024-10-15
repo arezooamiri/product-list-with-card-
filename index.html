@@ -11,117 +11,164 @@
 </head>
 <body>
     <div class="main">
-        <div class="desserts">
-        
-            <div class="desert">
-                <div class="image">
-                    <img  class="imageCard" id="image1" src="../images/image-waffle-desktop.jpg">
-                    <button class="orderButton" data-target="image1">
-                        <img src="/images/icon-add-to-cart.svg"/>Add to Cart
-                        <div id="clac"></div>
-                    </button>
+        <div class="desserts" id="container">
+            <div class="dessert" >
+                <div class="design">
+                    <div class="image"><img  class="imageCard" id="image1" src="../images/image-waffle-desktop.jpg"></div>
+                    <div id="orderButton-Waffle with Berries" class="orderButton"  data-target="image1"  onclick="handleOrderButtonClick('Waffle with Berries', 6.50)">
+                        <img id="image-Waffle with Berries" src="/images/icon-add-to-cart.svg"/>
+                        <span id="text-Waffle with Berries">Add to Cart</span>
+                        <div  class="counterButtons" id="counterButton-Waffle with Berries" style="display: none;" >
+                            <button id="increase-Waffle with Berries" onclick="addToCard('Waffle with Berries',6.50); event.stopPropagation();">+</button>
+                            <span id="count-Waffle with Berries">0</span>
+                            <button id="decrease-Waffle with Berries" onclick="removeFromCart('Waffle with Berries'); event.stopPropagation();">-</button>
+                            
+                        </div>
+                    </div>
+                    
                 </div>
-                <span>Waffle</span>
-                <p>Waffle with Berries</p>
-                <p>6.50</p>
+            
             </div>
-            <div class="desert">
-                <div class="image">
-                    <img   id="image2"class="imageCard" src="../images/image-creme-brulee-desktop.jpg">
-                    <button class="orderButton" data-target="image2" ><img src="/images/icon-add-to-cart.svg"/>Add to Cart</button>
+            <div class="dessert">
+                <div  id ="design" class="design">
+                    <div class="image"> <img   id="image2" class="imageCard" src="../images/image-creme-brulee-desktop.jpg"></div>
+                        <div class="orderButton" data-target="image2" id="orderButton-Vanilla Bean Crème Brûlée"  onclick="handleOrderButtonClick('Vanilla Bean Crème Brûlée', 7.00)">
+                            <img id="image-Vanilla Bean Crème Brûlée" src="/images/icon-add-to-cart.svg"/>
+                            <span id="text-Vanilla Bean Crème Brûlée">Add to Cart</span>
+                            <div  class="counterButtons"  id="counterButton-Vanilla Bean Crème Brûlée"style="display: none;" >
+                                <button id="increase-Vanilla Bean Crème Brûlée" onclick="addToCard('Vanilla Bean Crème Brûlée',7.00); event.stopPropagation();">+</button>
+                                <span id="count-Vanilla Bean Crème Brûlée">0</span>
+                                <button id="decrease-Vanilla Bean Crème Brûlée" onclick="removeFromCart('Vanilla Bean Crème Brûlée'); event.stopPropagation();">-</button>
+                            </div>
+                        </div>
                 </div>
-                <div>
-                    <span>Crème Brûlée</span>
-                    <p>Vanilla Bean Crème Brûlée</p>
-                    <p>7.00</p></div>
-                </div>
-            <div class="desert">
-                <div class="image">
-                    <img  id="image3" src="../images/image-macaron-desktop.jpg">
-                    <button class="orderButton" data-target="image3">
-                        <img class="basket" src="/images/icon-add-to-cart.svg"/> Add to Cart
-                    </button>
-                </div>
-                <span> Macaron</span>
-                <p>Macaron Mix of Five</p>
-                <p>8.00</p>
-            </div>
-            <div class="desert">
-                <div class="image">
-                    <img  id="image4" src="images/image-tiramisu-desktop.jpg">
-                    <button class="orderButton" data-target="image4"><img src="/images/icon-add-to-cart.svg"/> Add to Cart</button>
-                </div>
-                <span> Tiramisu</span>
-                <p>Classic Tiramisu</p>
-                <p>5.50</p>
-                
             </div>
             
-            <div class="desert">
-                <div class="image">
-                    <img id="image5" src="images/image-baklava-desktop.jpg">
-                    <button class="orderButton" data-target="image5"><img src="/images/icon-add-to-cart.svg"/> Add to Cart</button>
+            <div class="dessert">
+                <div class="design">
+                    <div class="image"><img  id="image3" src="../images/image-macaron-desktop.jpg"></div>
+                    <div class="orderButton" data-target="image3"  id="orderButton-Macaron" onclick="handleOrderButtonClick('Macaron', 8.00)" >
+                        <img class="basket" id="image-Macaron" src="/images/icon-add-to-cart.svg"/> 
+                        <span id="text-Macaron">Add to Cart</span>
+                        <div  class="counterButtons" id="counterButton-Macaron" style="display: none;" >
+                            <button id="increase-Macaron" onclick="addToCard('Macaron', 8.00); event.stopPropagation();">+</button>
+                            <span id="count-Macaron">0</span>
+                            <button id="decrease-Macaron" onclick="removeFromCart('Macaron'); event.stopPropagation();">-</button>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+            <div class="dessert">
+                <div class="design">
+                    <div class="image"><img  id="image4" src="images/image-tiramisu-desktop.jpg"></div>
+                    <div class="orderButton" data-target="image4" id="orderButton-Tiramisu" onclick="handleOrderButtonClick('Tiramisu', 5.5)">
+                        <img id="image-Tiramisu" src="/images/icon-add-to-cart.svg"/> 
+                        <span id="text-Tiramisu">Add to Cart</span>
+                        <div  class="counterButtons" id="counterButton-Tiramisu" style="display: none;" >
+                            <button id="increase-Tiramisu " onclick="addToCard('Tiramisu',5.5); event.stopPropagation();">+</button>
+                            <button id="decrease-Tiramisu" onclick="removeFromCart('Tiramisu'); event.stopPropagation();">-</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="dessert">
+                <div class="design">
+                    <div class="image"><img id="image5" src="images/image-baklava-desktop.jpg"></div>
+                    <div class="orderButton" data-target="image5" id="orderButton-Baklava" onclick="handleOrderButtonClick('Baklava', 4.00)">
+                        <img id="image-Baklava" src="/images/icon-add-to-cart.svg"/> 
+                        <span id="text-Baklava"> Add to Cart</span>
+                        <div  class="counterButtons" style="display: none;" id="counterButton-Baklava" >
+                            <button id="increase-Baklava" onclick="addToCard('Baklava', 4.00); event.stopPropagation();">+</button>
+                            <span id="count-Baklava">0</span>
+                            <button id="decrease-Baklava" onclick="removeFromCart('Baklava'); event.stopPropagation();">-</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <div class="dessert"> 
+                <div class="design">
+                    <div class="image"><img id="image6" src="images/image-meringue-desktop.jpg"></div>
+                    <div class="orderButton" data-target="image6" id="orderButton-Lemon"  onclick="handleOrderButtonClick('Lemon', 5.00)">
+                        <img id="image-Lemon" src="/images/icon-add-to-cart.svg"/> 
+                        <span id="text-Lemon">Add to Cart</span>
+                        <div  class="counterButtons" style="display: none;" id="counterButton-Lemon" >
+                            <button id="increase-Lemon" onclick="addToCard('Lemon', 5.00); event.stopPropagation();">+</button>
+                            <span id="count-Lemon">0</span>
+                            <button id="decrease-Lemon" onclick="removeFromCart('Lemon'); event.stopPropagation();">-</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+            <div class="dessert"> 
+                <div class="design">
+                    <div class="image"> <img id="image7" src="images/image-cake-desktop.jpg"></div>
+                    <div class="orderButton" data-target="image7" id="orderButton-Red Velvet Cake"  onclick="handleOrderButtonClick('Red Velvet Cake', 4.50)">
+                        <img  id="image-Red Velvet Cake" src="/images/icon-add-to-cart.svg"/> 
+                        <span id="text-Red Velvet Cake">Add to Cart</span>
+                        <div  class="counterButtons" id="counterButton-Red Velvet Cake" style="display: none;" >
+                            <button id="increase-Red Velvet Cake" onclick="addToCard('Red Velvet Cake',4.50); event.stopPropagation();">+</button>
+                            <span id="count-Red Velvet Cake">0</span>
+                            <button id="decrease-Red Velvet Cake" onclick="removeFromCart('Red Velvet Cake'); event.stopPropagation();">-</button>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+
+            <div class="dessert">
+                <div class="design">
+                    <div class="image"> <img id="image8" src="images/image-brownie-desktop.jpg"></div>
+                    <div class="orderButton" data-target="image8"  id="orderButton-Brownie" onclick="handleOrderButtonClick('Brownie', 4.50)"> 
+                        <img id="image-Brownie"  src="/images/icon-add-to-cart.svg"/>
+                        <span id="text-Brownie">Add to Cart</span>
+                        <div  class="counterButtons" style="display: none;" id="counterButton-Brownie" >
+                            <button id="increase-Brownie" onclick="addToCard('Brownie', 4.50); event.stopPropagation();">+</button>
+                            <span id="count-Brownie">0</span>
+                            <button id="decrease-Brownie" onclick="removeFromCart('Brownie'); event.stopPropagation();">-</button>
+                        </div>    
+
+                    </div>
                 </div>
                 
-                <span> Baklava</span>
-                <p>Pistachio Baklava</p>
-                <p>4.00</p>
             </div>
-            <div class="desert"> 
-                <div class="image">
-                    <img id="image6" src="images/image-meringue-desktop.jpg">
-                    <button class="orderButton" data-target="image6"><img src="/images/icon-add-to-cart.svg"/> Add to Cart</button>
+            <div class="dessert">
+                <div class="design">
+                    <div class="image "><img id="image9" src="images/image-panna-cotta-desktop.jpg"></div>
+                    <div class="orderButton" data-target="image9" id="orderButton-Panna Cotta" onclick="handleOrderButtonClick('Panna Cotta', 6.50)" > 
+                        <img  id="image-Panna Cotta"src="/images/icon-add-to-cart.svg"/>
+                        <span id="text-Panna Cotta">Add to Cart</span>
+                        <div  class="counterButtons" style="display: none;" id="counterButton-Panna Cotta">
+                            <button id="increase-Panna Cotta" onclick="addToCard('Panna Cotta', 6.50); event.stopPropagation();">+</button>
+                            <span id="count-Panna Cotta">0</span>
+                            <button id="decrease-Panna Cotta" onclick="removeFromCart('Panna Cotta'); event.stopPropagation();">-</button>
+                        </div>    
+                    </div>
                 </div>
-                
-                <span>Pie </span>
-                <p>Lemon Meringue Pie</p>
-                <p>5.00</p>
-            </div>
-            <div class="desert"> 
-                <div class="image">
-                    <img id="image7" src="images/image-cake-desktop.jpg">
-                    <button class="orderButton" data-target="image7"><img src="/images/icon-add-to-cart.svg"/> Add to Cart</button>
-                </div>
-                
-                <span>  Cake</span>
-                <p>Red Velvet Cake</p>
-                <p> 4.50</p>
-            </div>
-            <div class="desert">
-                <div class="image">
-                    <img id="image8" src="images/image-brownie-desktop.jpg">
-                    <button class="orderButton" data-target="image8"> <img src="/images/icon-add-to-cart.svg"/>Add to Cart</button>
-                </div>
-               
-                <span> Brownie</span>
-                <p> Salted Caramel Brownie</p>
-                <p> 4.50</p>
-            </div>
-            <div class="desert">
-                <div class="image">
-                    <img id="image9" src="images/image-panna-cotta-desktop.jpg">
-                    <button class="orderButton" data-target="image9"> 
-                        <img src="/images/icon-add-to-cart.svg"/>
-                        Add to Cart
-                    </button>
-                </div>
-                <span>Panna Cotta</span>
-                <p>  Vanilla Panna Cotta</p>
-                <p> 6.50</p>
             </div>
             
         </div>
-        <div class="cart">
-            <p class="color">Your Cart(0) </p>
-            <img src="images/illustration-empty-cart.svg"/>
-            <p>added items will appear here</p> 
+        <div class="cart" id="cart-section">
+            <p class="color" id="cart">Your Cart(0) </p>
+            <ul id="cart-items" class="order-cart"></ul>
+            <img id='image-cart' src="images/illustration-empty-cart.svg"/>
+            <div class="total-price">
+                <span id="message">added items will appear here</span>
+                <p id="total-title"></p>
+                <p id="total-amount"></p>
+            </div>
+            <button id="confirm-button" style="display: none;">confirm order</button>
         </div>
     </div>
 
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Arezoo</a>
-  </div>
-  <script src="main.js"> </script>
+    <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+        Coded by <a href="#">Arezoo</a>
+    </div>
+<script src="main.js"> </script>
 </body>
 </html>
