@@ -37,7 +37,7 @@ function handleOrderButtonClick(productName, productPrice) {
     addToCard(productName, productPrice);
     styleChange(productName); 
     
-    confirm.style.display='inline-block';
+    
 }
 function styleChange(productName) {
     const orderButton=document.getElementById(`orderButton-${productName}`);
@@ -63,12 +63,10 @@ function styleChange(productName) {
     }
 
 }
-        
 
 
 
 const img=document.getElementById('image-cart');
-
 function addToCard(productName,productPrice){
     if (!cart[productName]) {
         cart[productName] = { price: productPrice, count: 0 };
@@ -77,20 +75,21 @@ function addToCard(productName,productPrice){
     cart[productName].count++;
     styleChange(productName)
     updateCart();
-    updateCount(productName);
-}
+    updateCount();
+};
+
 function removeFromCart(productName){
     if (cart[productName]){
         cart[productName].count--;
         
         if(cart[productName].count<=0){
             delete cart[productName];
-            img.style.display='block';
+            img.style.display='flex';
             confirm.style.display='none';
         }
         styleChange(productName)
         updateCart();
-        updateCount(productName);
+        updateCount();
     }
 
 }
@@ -129,13 +128,26 @@ function updateCart(){
     
 }
 
-function updateCount(productName) {
-    const cartP = document.getElementById('cart');
-    if (cart[productName]) {
-        cartP.textContent = `Your Cart  ( ${cart[productName].count})`;
+function updateCount() {
+    const cartPreview = document.getElementById('cart');
+    let cartShowItem=0
+    for (const [productName, item] of Object.entries(cart)){
+        if (cart[productName]){
+        confirm.style.display='block';
+        cartShowItem+=item.count;
+        cartPreview.textContent = `Your Cart  ( ${cartShowItem})`;
         const quantitySpan = document.getElementById(`count-${productName}`);
-        quantitySpan.textContent = cart[productName].count;
-    } else {
-        cartP.textContent = `Your Cart 0`; 
-    }
-}
+        quantitySpan.textContent = item.count;
+        }
+        else {
+            cartPreview.textContent = `Your Cart ${cartShowItem}`; 
+        };
+    };
+    
+    };
+    const confrimsummary=document.getElementById('confirm-summary')
+    confirm.addEventListener('click',()=>{
+        const orderSummary=document.getElementById('order-summary');
+        confrimsummary.style.display='block';
+        
+    });

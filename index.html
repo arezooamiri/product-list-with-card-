@@ -11,6 +11,7 @@
 </head>
 <body>
     <div class="main">
+        <h1>Desserts</h1>
         <div class="desserts" id="container">
             <div class="dessert" >
                 <div class="design">
@@ -67,6 +68,7 @@
                         <span id="text-Tiramisu">Add to Cart</span>
                         <div  class="counterButtons" id="counterButton-Tiramisu" style="display: none;" >
                             <button id="increase-Tiramisu " onclick="addToCard('Tiramisu',5.5); event.stopPropagation();">+</button>
+                            <span id="count-Tiramisu">0</span>
                             <button id="decrease-Tiramisu" onclick="removeFromCart('Tiramisu'); event.stopPropagation();">-</button>
                         </div>
                     </div>
@@ -155,13 +157,16 @@
         <div class="cart" id="cart-section">
             <p class="color" id="cart">Your Cart(0) </p>
             <ul id="cart-items" class="order-cart"></ul>
-            <img id='image-cart' src="images/illustration-empty-cart.svg"/>
+            <div class="image-cart" id='image-cart'><img  src="images/illustration-empty-cart.svg"/></div>
             <div class="total-price">
                 <span id="message">added items will appear here</span>
                 <p id="total-title"></p>
                 <p id="total-amount"></p>
             </div>
             <button id="confirm-button" style="display: none;">confirm order</button>
+        </div>
+        <div class="confirmsummary" style="display: none;" id="confirm-summary">
+            <div id ="order-summary" ></div>
         </div>
     </div>
 

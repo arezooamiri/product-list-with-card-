@@ -12,6 +12,7 @@ body{
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 .attribution a {
     color: hsl(228, 45%, 44%);
@@ -22,7 +23,6 @@ body{
 
 .main{
     width: 100%;
-   
     display: grid;
     grid-template-columns:auto auto auto auto ;
     padding:5rem;
@@ -35,6 +35,10 @@ body{
 }
 @media (max-width:800px) {
     .main{ grid-template-columns:  1fr; }
+}
+h1{
+    text-align: left;
+    font-size:3rem;
 }
 .desserts{
     width:90%;
@@ -136,13 +140,27 @@ body{
 }
 /* cart section */
 .cart{
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: white;
     border-radius: 5px;
+    font-family: 'RedHat';
 }
 .color{
     color: orangered;
     font-size:2rem;
+}
+.image-cart{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width:20rem;
+    height:20rem;
+}
+.image-cart img{
+    height:100%;
+    width:100%;
 }
 .order-cart{
     text-align: left;
@@ -151,8 +169,11 @@ body{
     justify-content:left;
 }
 .product-cart{
+    
     font-size:1.5rem;
     color: black;
+    padding-top:0.5rem;
+    font-weight: 700;
     
 }
 li{
@@ -170,21 +191,22 @@ li{
 .price-cart{
     color: hsl(12, 20%, 44%);
     padding: 1rem;
-    border-bottom:solid 1px  hsl(12, 20%, 44%);
+    border-bottom:solid 1px  hsl(12, 44%, 82%);
     font-weight: 500;
     font-size: 1.5rem;
+    font-weight: 700;
 }
 .total-price{
     display: flex;
     gap:2rem;
     justify-content:space-around;
-    font-size: 1.5rem;
+    font-size:2rem;
     
     
 }
 
 #total-amount{
-    font-weight:700;
+    font-weight: 700;
 }
 #confirm-button{
     width:80%;
@@ -194,4 +216,16 @@ li{
     border-radius: 1rem;
     color: white;
     
+}
+.confirmsummary{
+    width: 24rem;
+    height:24rem;
+    border-radius:0.5rem;
+    background-color: white;
+    position: fixed;
+    z-index: 11;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 3rem;
 }
