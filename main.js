@@ -1,3 +1,6 @@
+const totalTitle=document.getElementById('total-title');
+const totalAmount=document.getElementById('total-amount');
+
 
 fetch ('data.json').then(response=>response.json())
 .then(data=>{
@@ -22,23 +25,19 @@ fetch ('data.json').then(response=>response.json())
             div.appendChild(nameSpan);
             div.appendChild(priceSpan);
             desserts[index].appendChild(div); 
-
-    
         };
-        
         
     });
 });
 
 
 const cart={};
-const confirm=document.getElementById('confirm-button');
+const confirmButton=document.getElementById('confirm-button');
 function handleOrderButtonClick(productName, productPrice) {
     addToCard(productName, productPrice);
     styleChange(productName); 
-    
-    
 }
+
 function styleChange(productName) {
     const orderButton=document.getElementById(`orderButton-${productName}`);
     const countButton=document.getElementById(`counterButton-${productName}`);
@@ -54,24 +53,26 @@ function styleChange(productName) {
         text.style.display = 'block';
         targetImage.classList.remove('imageshow');
         orderButton.classList.remove('orderItem');
+        
     } else {
         targetImage.classList.add('imageshow');
         orderButton.classList.add('orderItem');
         countButton.style.display = 'block'; 
         image.style.display = 'none'; 
         text.style.display = 'none';
+        
     }
 
 }
 
 
-
+const message=document.getElementById('message');
 const img=document.getElementById('image-cart');
 function addToCard(productName,productPrice){
     if (!cart[productName]) {
         cart[productName] = { price: productPrice, count: 0 };
     }
-    
+   
     cart[productName].count++;
     styleChange(productName)
     updateCart();
@@ -83,13 +84,14 @@ function removeFromCart(productName){
         cart[productName].count--;
         
         if(cart[productName].count<=0){
+            updateCount();
             delete cart[productName];
             img.style.display='flex';
-            confirm.style.display='none';
+            
         }
         styleChange(productName)
         updateCart();
-        updateCount();
+        
     }
 
 }
@@ -97,10 +99,6 @@ function removeFromCart(productName){
 function updateCart(){
 
     const cartItems=document.getElementById('cart-items');
-    const totalTitle=document.getElementById('total-title');
-    const totalAmount=document.getElementById('total-amount');
-    const message=document.getElementById('message');
-    message.style.display='none';
     cartItems.innerHTML='';
     let total=0;
     
@@ -130,24 +128,45 @@ function updateCart(){
 
 function updateCount() {
     const cartPreview = document.getElementById('cart');
-    let cartShowItem=0
+    let cartShowItem=0;
     for (const [productName, item] of Object.entries(cart)){
+        
         if (cart[productName]){
-        confirm.style.display='block';
-        cartShowItem+=item.count;
-        cartPreview.textContent = `Your Cart  ( ${cartShowItem})`;
-        const quantitySpan = document.getElementById(`count-${productName}`);
-        quantitySpan.textContent = item.count;
+            
+            
+            cartShowItem+=item.count;
+            if (cartShowItem>0){
+                message.style.display='none';
+                totalAmount.style.display='block';
+                totalTitle.style.display='block';
+                confirmButton.style.display='block';
+
+
+            }
+            else{
+                totalAmount.style.display='none';
+                totalTitle.style.display='none';
+                message.style.display='block';
+                confirmButton.style.display='none';
+            }
+            cartPreview.textContent = `Your Cart  ( ${cartShowItem})`;
+            const quantitySpan = document.getElementById(`count-${productName}`);
+            quantitySpan.textContent = item.count;
         }
         else {
-            cartPreview.textContent = `Your Cart ${cartShowItem}`; 
+            cartPreview.textContent = `Your Cart ${0}`; 
         };
     };
     
     };
     const confrimsummary=document.getElementById('confirm-summary')
-    confirm.addEventListener('click',()=>{
+    confirmButton.addEventListener('click',()=>{
         const orderSummary=document.getElementById('order-summary');
         confrimsummary.style.display='block';
+    
+        for (const [productName,item] of  Object.entries(cart)){
+            
+
+        }
         
     });
