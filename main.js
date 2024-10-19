@@ -30,8 +30,7 @@ fetch ('data.json').then(response=>response.json())
     });
 });
 
-
-const cart={};
+let cart={};
 const confirmButton=document.getElementById('confirm-button');
 function handleOrderButtonClick(productName, productPrice) {
     addToCard(productName, productPrice);
@@ -97,7 +96,6 @@ function removeFromCart(productName){
 }
 
 function updateCart(){
-
     const cartItems=document.getElementById('cart-items');
     cartItems.innerHTML='';
     let total=0;
@@ -123,24 +121,22 @@ function updateCart(){
     totalTitle.textContent='order total';
     totalAmount.textContent=` $ ${total}`;
     
-    
 }
-
+const delviery=document.getElementById('delivery');
+const cartPreview = document.getElementById('cart');
 function updateCount() {
-    const cartPreview = document.getElementById('cart');
+    
     let cartShowItem=0;
     for (const [productName, item] of Object.entries(cart)){
         
         if (cart[productName]){
-            
-            
             cartShowItem+=item.count;
             if (cartShowItem>0){
                 message.style.display='none';
                 totalAmount.style.display='block';
                 totalTitle.style.display='block';
                 confirmButton.style.display='block';
-
+                delviery.style.display='flex';
 
             }
             else{
@@ -148,6 +144,7 @@ function updateCount() {
                 totalTitle.style.display='none';
                 message.style.display='block';
                 confirmButton.style.display='none';
+                delviery.style.display='none';
             }
             cartPreview.textContent = `Your Cart  ( ${cartShowItem})`;
             const quantitySpan = document.getElementById(`count-${productName}`);
@@ -159,14 +156,92 @@ function updateCount() {
     };
     
     };
-    const confrimsummary=document.getElementById('confirm-summary')
-    confirmButton.addEventListener('click',()=>{
-        const orderSummary=document.getElementById('order-summary');
-        confrimsummary.style.display='block';
-    
+const confrimsummary=document.getElementById('confirm-summary')
+const orderSummary=document.getElementById('order-summary');
+const backgroudConfirm=document.getElementById('confirm-background');
+confirmButton.addEventListener('click',()=>{
+        confrimsummary.style.display='flex';
+        orderSummary.innerHTML = '';
+        let totalsummary=0
+        backgroudConfirm.style.display='block';
         for (const [productName,item] of  Object.entries(cart)){
+            
+            const eachItemDiv=document.createElement('div');
+            orderSummary.appendChild(eachItemDiv);
+            eachItemDiv.classList.add('confirm-item');
+            const itemDetailOreder=document.createElement('div');
+            const  priceOfItem=document.createElement('div');
+            const  countItem=document.createElement('p');
+            const  spanPrice=document.createElement('span');
+            const  nameDiv=document.createElement('div');
+            const  orderDetail=document.createElement('div')
+            nameDiv.textContent=`${productName}`;
+            itemDetailOreder.appendChild(nameDiv);
+            countItem.textContent=` x ${item.count} `;
+            orderDetail.appendChild(countItem);
+            spanPrice.textContent=`$ ${item.price}`;
+            orderDetail.appendChild(spanPrice);
+           
+            orderDetail.classList.add('order-detail');
+            itemDetailOreder.appendChild(orderDetail);
+            priceOfItem.textContent=` $ ${item.count*item.price}`;
+            
+            eachItemDiv.appendChild(itemDetailOreder);
+            eachItemDiv.appendChild(priceOfItem);
+            totalsummary+= item.price*item.count;
             
 
         }
+        const totalConfirm=document.getElementById('total-confirm')
+        totalConfirm.textContent=` order total $ ${totalsummary}`;
+        
         
     });
+function deletAllOrder() {  
+        cart = {};  
+    
+        
+        updateCart();  
+        updateCount();  
+        const desserts = document.querySelectorAll('.dessert');  
+        desserts.forEach(dessert => {  
+            const orderButton = dessert.querySelector('[id^="orderButton-"]');  
+            const countButton = dessert.querySelector('[id^="counterButton-"]');  
+            const image = dessert.querySelector('[id^="image-"]');  
+            const text = dessert.querySelector('[id^="text-"]');  
+            if (orderButton) {  
+                orderButton.classList.remove('orderItem');  
+            }  
+            if (countButton) {  
+                countButton.style.display = 'none';  
+            }  
+            if (image) {  
+                image.style.display = 'block';  
+            }  
+            if (text) {  
+                text.style.display = 'block';  
+            }  
+            const targetImageId = orderButton.getAttribute('data-target');  
+            const targetImage = document.getElementById(targetImageId);  
+            if (targetImage) {  
+                targetImage.classList.remove('imageshow');  
+            }  
+        });  
+        backgroudConfirm.style.display='none';
+        cartPreview.textContent = `Your Cart (${0})`; 
+        message.style.display = 'block';  
+        delviery.style.display='none';
+        confirmButton.style.display = 'none';  
+        totalTitle.style.display = 'none';  
+        totalAmount.style.display = 'none';  
+        img.style.display = 'flex'; 
+    }  ;
+    
+
+
+const startOrder=document.getElementById('new-order');
+startOrder.addEventListener('click',()=>{
+        confrimsummary.style.display='none';
+        confirmButton.style.display='none';
+        deletAllOrder();
+})

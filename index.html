@@ -158,15 +158,30 @@
             <p class="color" id="cart">Your Cart(0) </p>
             <ul id="cart-items" class="order-cart"></ul>
             <div class="image-cart" id='image-cart'><img  src="images/illustration-empty-cart.svg"/></div>
+            <div class="delivery" style="display: none;" id="delivery">
+                <img src="images/icon-carbon-neutral.svg" alt="">
+                <p>
+                    This is a <b>carbon-neutral </b>delivery
+                </p>
+            </div>
             <div class="total-price">
                 <span id="message">added items will appear here</span>
                 <p id="total-title" style="display: none;"></p>
                 <p id="total-amount" style="display: none;"></p>
             </div>
-            <button id="confirm-button" style="display: none;">confirm order</button>
+            <button class="confirm-button" id="confirm-button" style="display: none;">confirm order</button>
         </div>
-        <div class="confirmsummary" style="display: none;" id="confirm-summary">
-            <div id ="order-summary" ></div>
+        <div class="confirm-background" style="display: none;" id="confirm-background">
+            <div class="confirmsummary" style="display: none;" id="confirm-summary">
+                <img src="images/icon-order-confirmed.svg">
+                <p style="font-weight: 700;">Order Confirmed</p>
+                <span>We hope you enjoy your food!</span>
+                <div id="order-summary">order</div>
+                <div id="total-confirm" style="font-size: 1.5rem;">
+                    
+                </div>
+                <button class="confirm-button" id="new-order">start new order </button>
+            </div>
         </div>
     </div>
 
