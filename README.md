@@ -1,4 +1,4 @@
-Product list with cart is to build out this product list project that includes a functional cart and get it looking as close to the design as possible..
+Product-list-with-cart is forntmentor challenge to build out this product list project that includes a functional cart and get it looking as close to the design as possible..
 build a Product List Card UI using JavaScript, HTML, and CSS. The goal is to create a visually appealing and interactive product display that showcases product details efficiently.
 
 Dynamic Product Display: Render multiple products dynamically.
